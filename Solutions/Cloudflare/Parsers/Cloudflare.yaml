@@ -9,6 +9,18 @@ FunctionAlias: Cloudflare
 FunctionQuery: |
     Cloudflare_CL
     | extend
+        ActionType_s=column_ifexists('ActionType_s', ''),
+        ActorEmail_s=column_ifexists('ActorEmail_s', ''),
+        ActorIP_s=column_ifexists('ActorIP_s', ''),
+        ActorType_s=column_ifexists('ActorType_s', ''),
+        ID_s=column_ifexists('ID_s', ''),
+        Interface_s=column_ifexists('Interface_s', ''),
+        Metadata_t=column_ifexists('Metadata_d', ''),
+        NewValue_t=column_ifexists('NewValue_d', ''),
+        OldValue_t=column_ifexists('OldValue_d', ''),
+        OwnerID_s=column_ifexists('OwnerID_s', ''),
+        ResourceID_s=column_ifexists('ResourceID_s', ''),
+        When_t=column_ifexists('When_t', ''),
         BotScore_d=column_ifexists('BotScore_d', ''),
         BotScoreSrc_s=column_ifexists('BotScoreSrc_s', ''),
         CacheCacheStatus_s=column_ifexists('CacheCacheStatus_s', ''),
@@ -118,6 +130,19 @@ FunctionQuery: |
         ClientSrcPort_d=column_ifexists('ClientSrcPort_d', column_ifexists('ClientPort_d', '')),
         EdgeResponseBytes_d=column_ifexists('EdgeResponseBytes_d', column_ifexists('OriginBytes_d', ''))
     | project-rename
+        ActionResult=ActionResult_d,
+        ActionType=ActionType_s,
+        ActorEmail=ActorEmail_s,
+        ActorIP=ActorIP_s,
+        ActorType=ActorType_s,
+        ID=ID_s,
+        Interface=Interface_s,
+        Metadata=Metadata_t,
+        NewValue=NewValue_t,
+        OldValue=OldValue_t,
+        OwnerID=OwnerID_s,
+        ResourceID=ResourceID_s,
+        When=When_t,
         SrcBytes=ClientRequestBytes_d,
         SrcPortNumber=ClientSrcPort_d,
         DstBytes=EdgeResponseBytes_d,
