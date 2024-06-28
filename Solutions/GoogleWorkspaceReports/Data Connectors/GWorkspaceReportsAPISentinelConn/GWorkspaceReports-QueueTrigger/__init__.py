@@ -18,12 +18,12 @@ from datetime import datetime, timedelta
 
 
 customer_id = os.environ['WorkspaceID']
-fetchDelay = os.getenv('FetchDelay',60)
+fetchDelay = os.getenv('FetchDelay',30)
 chunksize = 9999
-calendarFetchDelay = os.getenv('CalendarFetchDelay',60)
-chatFetchDelay = os.getenv('ChatFetchDelay',60)
-userAccountsFetchDelay = os.getenv('UserAccountsFetchDelay',60)
-loginFetchDelay = os.getenv('LoginFetchDelay',60)
+calendarFetchDelay = os.getenv('CalendarFetchDelay',20)
+chatFetchDelay = os.getenv('ChatFetchDelay',10)
+userAccountsFetchDelay = os.getenv('UserAccountsFetchDelay',10)
+loginFetchDelay = os.getenv('LoginFetchDelay',10)
 shared_key = os.environ['WorkspaceKey']
 pickle_str = os.environ['GooglePickleString']
 pickle_string = base64.b64decode(pickle_str)
